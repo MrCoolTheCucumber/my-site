@@ -1,0 +1,49 @@
+@import './code.scss';
+
+.blog-post {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    .blog-post__header-title {
+        font-weight: bold;
+        font-size: 46px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+
+        border-bottom: 1px solid rgba(141, 141, 141, 0.6);
+    }
+
+    .blog-post__header-date {
+        font-size: 14px;
+        color:rgb(197, 197, 197)
+    }
+}
+
+.blog-post__content {
+    margin-bottom: 50px;
+    
+    font-size: 19px;
+}
+
+.blog-post__footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 50px;
+    
+    span {
+        color: #a0a0a0;
+        font-size: 13px;
+
+        margin-right: 10px;
+        background-color: #9a9a9a29;
+        padding: 5px 10px;
+    }
+}

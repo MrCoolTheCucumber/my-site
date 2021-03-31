@@ -1,0 +1,25 @@
+.header {
+    height: 50px;
+    padding: 25px 0;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    a {
+        transform: translateY(5px);
+        color: #f3f3f3;
+        text-decoration: none;
+    }
+
+    a:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.header__name {
+    font-family: 'Roboto Mono';
+    font-size: 32px;
+    margin-right: 50px;
+}

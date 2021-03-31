@@ -1,0 +1,40 @@
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #171717;
+    color: #f3f3f3;
+
+    font-family: 'Open Sans', Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+}
+
+#root {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+$footer-height: 50px;
+
+.app-wrapper {
+    width: 100%;
+    max-width: 1040px;
+
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    min-height: calc(100% - 200px);
+}
