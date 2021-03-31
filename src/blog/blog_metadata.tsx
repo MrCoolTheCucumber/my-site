@@ -10,7 +10,7 @@ export const MetaData: BlogMetaData[] = [
         id: 0,
         title: "Creating a CHIP-8 emulator/interpreter",
         description: "My brief introduciton to writing emulators.",
-        date: new Date('01 Jan 1970 00:00:00 GMT'),
+        date: new Date('01 April 2021 00:46:00 GMT'),
         tags: ["emulation", "chip8"],
         renderBlog: () => { return <Chip8 /> }
     }
