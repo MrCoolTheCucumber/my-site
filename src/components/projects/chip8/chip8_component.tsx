@@ -8,7 +8,11 @@ import Tetris from './tetris';
 const SCREEN_WIDTH = 64;
 const SCREEN_HEIGHT = 32;
 
-export default class Chip8Component extends React.Component {
+interface Chip8ComponentProps {
+    style?: React.CSSProperties
+}
+
+export default class Chip8Component extends React.Component<Chip8ComponentProps> {
     _chip8: Chip8Interpreter;
     _raf: number;
     _canvas: React.RefObject<HTMLCanvasElement>;
@@ -19,7 +23,7 @@ export default class Chip8Component extends React.Component {
 
     _key_map: number[];
 
-    constructor(props: {}) {
+    constructor(props: Chip8ComponentProps) {
         super(props)
         this._chip8 = new Chip8Interpreter();
         this._chip8.load(Invaders);
@@ -108,7 +112,7 @@ export default class Chip8Component extends React.Component {
         const height = SCREEN_HEIGHT * this._scale_factor;
 
         return (
-            <div>
+            <div style={this.props.style}>
                 <canvas
                     ref={this._canvas} 
                     width={width} 

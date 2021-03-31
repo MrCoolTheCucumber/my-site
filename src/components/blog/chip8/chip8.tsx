@@ -73,7 +73,7 @@ class Chip8 extends React.Component {
 
             Before the above I somehow managed to render a 90 degree rotaded version!
 
-            <Chip8Component/>
+            <Chip8Component style={{marginTop: '30px'}}/>
             </React.Fragment>
         )
     }
