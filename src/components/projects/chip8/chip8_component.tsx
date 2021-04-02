@@ -2,8 +2,6 @@ import React from 'react';
 import Chip8Interpreter from './chip8_interpreter';
 
 import Invaders from './invaders';
-import Ibm from './ibm';
-import Tetris from './tetris';
 
 const SCREEN_WIDTH = 64;
 const SCREEN_HEIGHT = 32;
