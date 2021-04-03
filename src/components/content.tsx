@@ -1,7 +1,8 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { BlogListItem, BlogListItemProps } from './blog/blog_list_item';
 import BlogPost from './blog/blog';
+import Home from './home/home';
 
 import { MetaData } from '../blog/blog_metadata';
 
@@ -46,8 +47,20 @@ export default class Content extends React.Component {
                 <Switch>
                     {this.renderBlogRoute()}
                     
-                    <Route path="/">
+                    <Route path='/blog'>
                         {this.renderBlogList()}
+                    </Route>
+
+                    <Route path='/project'>
+                        <div>Comming soon?</div>
+                    </Route>
+
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+
+                    <Route path='/(.+)'>
+                        <Redirect to='/'/>
                     </Route>
                 </Switch>
             </div>

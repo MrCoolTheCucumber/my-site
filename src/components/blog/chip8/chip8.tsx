@@ -1,6 +1,6 @@
 import React from "react";
 import CodeSnippet from '../code_snippet';
-import Chip8Component from '../../projects/chip8/chip8_component';
+import Chip8Component from '../../../projects/chip8/chip8_component';
 import './chip8.scss';
 
 class Chip8 extends React.Component {

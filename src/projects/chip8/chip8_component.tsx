@@ -26,7 +26,7 @@ export default class Chip8Component extends React.Component<Chip8ComponentProps>
         this._chip8 = new Chip8Interpreter();
         this._chip8.load(Invaders);
         this._canvas = React.createRef();
-        this._scale_factor = 16;
+        this._scale_factor = 4;
         this._throttle = 0;
         this._raf_counter = 0;
 

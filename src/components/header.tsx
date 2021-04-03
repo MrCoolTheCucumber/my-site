@@ -8,6 +8,8 @@ export default class Home extends React.Component {
             <div className="header">
                 <span className="header__name">Ruben Ghatoaura</span>
                 <Link to="/">Home</Link>
+                <Link to="/blog">Blog</Link>
+                <Link to='/project'>Projects</Link>
             </div>
         )
     }
