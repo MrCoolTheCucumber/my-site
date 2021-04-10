@@ -10,6 +10,7 @@ export default class Home extends React.Component {
                 <Link to="/">Home</Link>
                 <Link to="/blog">Blog</Link>
                 <Link to='/project'>Projects</Link>
+                <a href='https://github.com/RubenG123'>GitHub</a>
             </div>
         )
     }

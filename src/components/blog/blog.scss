@@ -29,6 +29,16 @@
     margin-bottom: 50px;
     
     font-size: 19px;
+
+    $link-color: rgb(124, 217, 253);
+
+    a:link {
+        color: $link-color;
+    }
+    
+    a:visited {
+        color: $link-color;
+    }
 }
 
 .blog-post__footer {
