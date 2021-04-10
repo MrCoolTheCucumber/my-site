@@ -41,6 +41,18 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html'
+        }),
+        new CopyPlugin({
+            patterns: [
+                { 
+                    from: 'public',
+                    globOptions: {
+                        ignore: [
+                            "**/*.html"
+                        ]
+                    } 
+                }
+            ]
         })
     ],
     // TODO: understand how this fix works
