@@ -5,7 +5,7 @@ export default class Footer extends React.Component {
     render() {
         return (
             <div className="footer">
-                // TODO
+                When the imposter is sus 😳 do do do do do do do. do-do-do. dun dun.
             </div>
         )
     }

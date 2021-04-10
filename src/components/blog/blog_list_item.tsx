@@ -40,7 +40,6 @@ export const BlogListItem = (props: BlogListItemProps): ReactElement => {
 
     const handleOnClick = () => {
         const slug = props.id + "-" + props.title.replace (/\s/g, "-");
-        console.log(props.title)
         history.push('/blog/' + slug);
     }
 
