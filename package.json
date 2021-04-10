@@ -6,7 +6,7 @@
     "scripts": {
         "build": "webpack",
         "start": "wsl-open http://localhost:8080 && webpack serve",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "exit 0"
     },
     "author": "Ruben",
     "license": "MIT",
