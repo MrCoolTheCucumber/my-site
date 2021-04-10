@@ -24,12 +24,16 @@ export default class Home extends React.Component<{}, HomeState> {
 
         this.cursorIntervalId = window.setInterval(cursorUpdate, 500);
 
-        // setup typing effect of title
-        this.fakeTypeTitle('H', 100);
-        this.fakeTypeTitle('e', 300);
-        this.fakeTypeTitle('l', 500);
-        this.fakeTypeTitle('l', 650);
-        this.fakeTypeTitle('o', 950);
+        // wait a bit before setup
+        window.setTimeout(() => {
+            // setup typing effect of title
+            this.fakeTypeTitle('H', 100);
+            this.fakeTypeTitle('e', 200);
+            this.fakeTypeTitle('l', 300);
+            this.fakeTypeTitle('l', 380);
+            this.fakeTypeTitle('o', 580);
+        }, 1000);
+        
     }
 
     componentWillUnmount() {
