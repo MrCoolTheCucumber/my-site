@@ -8,6 +8,7 @@ const SCREEN_HEIGHT = 32;
 
 interface Chip8ComponentProps {
     style?: React.CSSProperties
+    scale?: number;
 }
 
 export default class Chip8Component extends React.Component<Chip8ComponentProps> {
@@ -26,7 +27,7 @@ export default class Chip8Component extends React.Component<Chip8ComponentProps>
         this._chip8 = new Chip8Interpreter();
         this._chip8.load(Invaders);
         this._canvas = React.createRef();
-        this._scale_factor = 4;
+        this._scale_factor = props.scale || 4;
         this._throttle = 0;
         this._raf_counter = 0;
 

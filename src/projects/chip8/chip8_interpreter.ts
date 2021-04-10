@@ -17,6 +17,9 @@ export default class Chip8Interpreter {
     _delay_timer: number;
     _sound_timer: number;
 
+    _await_key_press: boolean;
+    _await_key_press_register: number;
+
     gfx: Uint8Array; // ubyte
     _key: boolean[];
 
@@ -75,15 +78,21 @@ export default class Chip8Interpreter {
 
     set_key(key_index: number): void {
         this._key[key_index] = true;
-        console.log("set " + key_index)
+
+        if (this._await_key_press) {
+            this._V[this._await_key_press_register] = key_index;
+            this._await_key_press = false;
+        }
     }
 
     unset_key(key_index: number): void {
         this._key[key_index] = false;
-        console.log("unset " + key_index)
     }
 
     cycle(): void {
+        if (this._await_key_press)
+            return;
+
         this._opcode = (this._memory[this._program_counter] << 8) | this._memory[this._program_counter + 1];
 
         switch(this._opcode & 0xF000) {
@@ -303,17 +312,20 @@ export default class Chip8Interpreter {
 
                     case 0x0A: // Fx0A: wait for keypress, store key val in Vx
                         let keyPress = false;
-                        let key_index = 0;
 
-                        while (!keyPress) {
-                            if (this._key[key_index]) {
-                                this._V[(this._opcode & 0x0F00) >> 8] =  key_index;
+                        for (let i = 0; i < this._key.length; ++i) {
+                            if (this._key[i]) {
+                                this._V[(this._opcode & 0x0F00) >> 8] = i;
                                 keyPress = true;
+                                break;
                             }
+                        }
 
-                            key_index++;
-                            if (key_index == 16)
-                                key_index = 0;
+                        if (!keyPress) {
+                            // stop execution via setting flag that also enables key press hooks to 
+                            // resume our execution.
+                            this._await_key_press = true;
+                            this._await_key_press_register = (this._opcode & 0x0F00) >> 8;
                         }
 
                         this._program_counter += 2;
