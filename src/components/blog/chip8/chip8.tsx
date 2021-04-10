@@ -16,10 +16,10 @@ class Chip8 extends React.Component {
     break;`
         
         const codeSnippet2 = `for (let i = 0; i < (64 * 32); i++) { 
-        let x = i % 64;
-        let y = Math.floor(i / 64);
-        ...
-    }`
+    let x = i % 64;
+    let y = Math.floor(i / 64);
+    ...
+}`
 
         return (
             <React.Fragment>
