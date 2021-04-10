@@ -71,6 +71,8 @@ export default class Home extends React.Component<{}, HomeState> {
                         <Link to='/project'>Projects</Link>
                         <span>|</span>
                         <a href='https://github.com/RubenG123'>GitHub</a>
+                        <span>|</span>
+                        <a href='https://www.linkedin.com/in/ruben-ghatoaura/'>LinkedIn (park)</a>
                     </div>
                 </div>
             </div>

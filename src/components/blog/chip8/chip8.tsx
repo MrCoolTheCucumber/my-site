@@ -71,9 +71,24 @@ class Chip8 extends React.Component {
 
             <CodeSnippet code={codeSnippet2}/>
 
-            Before the above I somehow managed to render a 90 degree rotaded version!
+            <p>Before the above I somehow managed to render a 90 degree rotaded version!</p>
 
-            <Chip8Component style={{marginTop: '30px'}}/>
+            <p>
+                Overall I'd say that implementing the Chip-8 interpreter/emulator was a pretty interesting experience. I didn't implement 
+                sound (which is just a timer that eventually plays a buzzer sound basically). But otherwise it's basically a giant switch 
+                statement where we read an instruction and then execute it. And eventually we need to draw the frame buffer to the screen. 
+                Apparently Chip-8 is too simple, and doesn't really help if say you wanted to then go on and write a gameboy emulator 
+                (which I may do!) as for example such an emulator requires a lot of synchronization between components.
+            </p>
+
+            <p>
+                You can view the code I wrote for this &nbsp;
+                <a href='https://github.com/RubenG123/my-site/tree/master/src/projects/chip8'>here</a>&nbsp;
+                on my github. And you should see the component below! Click it to put it in focus, then use w to shoot, q and r to move! 
+
+            </p>
+
+            <Chip8Component style={{marginTop: '30px'}} scale={6} />
             </React.Fragment>
         )
     }
