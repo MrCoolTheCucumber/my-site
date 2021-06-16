@@ -9,7 +9,7 @@ import Content from './content'
 export default class Home extends React.Component {
     render() {
         return (
-            <Router>
+            <React.Fragment>
                 <Route exact path='/'>
                     <Content />
                 </Route>
@@ -20,7 +20,7 @@ export default class Home extends React.Component {
                     <Content />
                     <Footer />
                 </Route>
-            </Router>
+            </React.Fragment>
         )
     }
 }
