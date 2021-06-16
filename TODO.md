@@ -2,3 +2,4 @@
 - Adjust sizes for components to better suit mobile 
 - Add code splitting (mainly just the code formatter library)
 - Add tests and set up CI/CD?
+- https://css-tricks.com/viewport-sized-typography/

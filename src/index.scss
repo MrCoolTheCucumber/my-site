@@ -68,12 +68,12 @@ $footer-height: 50px;
     grid-area: content;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
     .app-wrapper__grid {
         height: 100%;
        
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         grid-template-rows: 50px 35px 1fr 50px;
         grid-template-areas: 
             "header" 
@@ -82,5 +82,9 @@ $footer-height: 50px;
             "footer";
         
         padding: 0 20px;
+    }
+
+    .app-wrapper {
+        max-width: calc(700 - 40)px;
     }
 }
