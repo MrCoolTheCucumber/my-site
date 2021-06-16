@@ -13,11 +13,21 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: geometricPrecision;
+
+    height: 100vh;
+    height: -webkit-fill-available;
+    height: -moz-available;
+}
+
+html {
+    height: -webkit-fill-available;
+    height: -moz-available;
 }
 
 #root {
     height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
+    height: -moz-available;
 
     display: flex;
     flex-direction: column;
@@ -31,7 +41,8 @@ $footer-height: 50px;
     max-width: 1040px;
 
     min-height: 100vh;
-    min-height: calc(var(--vh, 1vh) * 100);
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
 
     display: flex;
     flex-direction: column;
