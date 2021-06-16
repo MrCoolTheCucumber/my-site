@@ -1,2 +1,4 @@
 - Make nav a button when in "mobile mode"?
 - Adjust sizes for components to better suit mobile 
+- Add code splitting (mainly just the code formatter library)
+- Add tests and set up CI/CD?
