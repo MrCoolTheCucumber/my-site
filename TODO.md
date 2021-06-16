@@ -1,0 +1,2 @@
+- Make nav a button when in "mobile mode"?
+- Adjust sizes for components to better suit mobile 
