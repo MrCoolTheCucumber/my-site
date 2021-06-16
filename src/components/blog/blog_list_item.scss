@@ -39,3 +39,19 @@
     min-height: 100%;
     font-family: 'Roboto Mono';
 }
+
+@media screen and (max-width: 650px) {
+    .blog-list-item__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blog-list-item__date {
+        font-size: 12px;
+    }
+
+    .blog-list-item__title {
+        font-size: 18px;
+        margin-right: 0;
+    }
+}

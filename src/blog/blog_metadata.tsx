@@ -8,7 +8,7 @@ export interface BlogMetaData extends BlogListItemProps {
 export const MetaData: BlogMetaData[] = [
     {
         id: 0,
-        title: "Creating a CHIP-8 emulator/interpreter",
+        title: "Creating a CHIP-8 emulator",
         description: "My brief introduciton to writing emulators.",
         date: new Date('01 April 2021 00:46:00 GMT'),
         tags: ["emulation", "chip8"],

@@ -1,7 +1,7 @@
 .header {
+    grid-area: header;
     height: 50px;
     padding: 25px 0;
-    margin-bottom: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,5 +22,15 @@
 .header__name {
     font-family: 'Roboto Mono';
     font-size: 32px;
-    margin-right: 50px;
+}
+
+@media screen and (max-width: 650px) {
+    .header {
+        padding: 0;
+        height: 100%;
+    }
+
+    .header__name {
+        font-size: 26px;
+    }
 }

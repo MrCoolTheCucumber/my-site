@@ -7,7 +7,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="app-wrapper">
-                <div className="app-wrapper__flex">
+                <div className="app-wrapper__grid">
                     <_App />
                 </div>
             </div>
