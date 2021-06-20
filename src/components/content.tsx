@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import { BlogListItem, BlogListItemProps } from './blog/blog_list_item';
 import BlogPost from './blog/blog';
 import Home from './home/home';
+import ProjectList from './projects/project_list';
 
 import { MetaData } from '../blog/blog_metadata';
 
@@ -52,7 +53,7 @@ export default class Content extends React.Component {
                     </Route>
 
                     <Route path='/project'>
-                        <div>Comming soon?</div>
+                        <ProjectList />
                     </Route>
 
                     <Route exact path="/">
