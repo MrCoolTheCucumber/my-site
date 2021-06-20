@@ -1,5 +1,4 @@
-- Make nav a button when in "mobile mode"?
-- Adjust sizes for components to better suit mobile 
+- Add mobile styling for the project page
 - Add code splitting (mainly just the code formatter library)
 - Add tests and set up CI/CD?
 - https://css-tricks.com/viewport-sized-typography/
