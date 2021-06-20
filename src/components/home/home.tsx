@@ -10,6 +10,7 @@ interface HomeState {
 export default class Home extends React.Component<{}, HomeState> {
     cursorIntervalId: number = -1;
     fakeTypeTimeoutId: number[] = [];
+    fakeTypeSetupId: number = -1;
     
     constructor(props: {}) {
         super(props);
@@ -25,7 +26,7 @@ export default class Home extends React.Component<{}, HomeState> {
         this.cursorIntervalId = window.setInterval(cursorUpdate, 500);
 
         // wait a bit before setup
-        window.setTimeout(() => {
+        this.fakeTypeSetupId = window.setTimeout(() => {
             // setup typing effect of title
             this.fakeTypeTitle('H', 100);
             this.fakeTypeTitle('e', 200);
@@ -40,6 +41,7 @@ export default class Home extends React.Component<{}, HomeState> {
         // clear interval and any timeouts in case they havn't
         // fired yet
         window.clearInterval(this.cursorIntervalId);
+        window.clearTimeout(this.fakeTypeSetupId);
         this.fakeTypeTimeoutId.forEach(id => {
             window.clearTimeout(id);
         })
