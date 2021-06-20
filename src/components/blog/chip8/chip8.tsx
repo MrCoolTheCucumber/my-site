@@ -87,7 +87,7 @@ class Chip8 extends React.Component {
                 &nbsp;on my github. And you should see the component below! Click it to put it in focus, then use w to shoot, q and r to move! 
             </p>
 
-            <Chip8Component style={{marginTop: '30px'}} scale={6} />
+            <Chip8Component style={{marginTop: '30px'}} scale={3} />
             </React.Fragment>
         )
     }
