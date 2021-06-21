@@ -1,19 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './project_list.scss';
 
 interface ProjectCardData {
     title: string;
     description: string;
     imgSrc: string;
-    onClickLink: string;
+    githubLink?: string;
+    demoLink?: string;
 }
 
 const projectData: ProjectCardData[] = [
     {
         title: "Frosty",
         description: "Creating an accurate, maintainable Game Boy emulator written in the rust programming language.",
-        onClickLink: "https://github.com/RubenG123/frosty",
+        githubLink: "https://github.com/RubenG123/frosty",
         imgSrc: "https://user-images.githubusercontent.com/16002713/119414812-330f3000-bce8-11eb-9eac-b12482dbc3f2.png"
+    },
+    {
+        title: "Chip 8",
+        description: "First emulator project to get my feet wet",
+        githubLink: "https://github.com/RubenG123/my-site/tree/master/src/projects/chip8",
+        imgSrc: "https://i.imgur.com/T0W73T5.png",
+        demoLink: "chip8"
     }
 ];
 
@@ -24,19 +33,42 @@ export default class ProjectList extends React.Component {
         });
     }
 
-    renderProjectCard(data: ProjectCardData, index: number): JSX.Element {
-        const onClick = () => {
-            window.location.href = data.onClickLink;
+    renderDemoButton(data: ProjectCardData): JSX.Element | void {
+        if (data.demoLink) {
+            return (
+                <Link to={'/demo/' + data.demoLink} className="project-card__demo_button">
+                    <span>Demo</span>
+                </Link>
+            )
         }
+    }
 
+    renderGithubButton(data: ProjectCardData): JSX.Element | void {
+        if (data.githubLink) {
+            return (
+                <a href={data.githubLink} className="project-card__demo_button">
+                    <span>Github</span>
+                </a>
+            )
+        }
+    }
+
+    renderProjectCard(data: ProjectCardData, index: number): JSX.Element {
         return (
-            <div key={index} className="project-card" onClick={onClick}>
+            <div key={index} className="project-card" >
                 <div className="project-card__details-wrapper">
-                    <div className="project-card__title">{data.title}</div>
+                    <div className="project-card__title-row-wrapper">
+                        <div className="project-card__title">{data.title}</div>
+                        {this.renderGithubButton(data)}
+                        {this.renderDemoButton(data)}
+                    </div>
+                    
                     <div className="project-card__desc">{data.description}</div>
                 </div>
                 
-                <img src={data.imgSrc} className="project-card__img" />
+                <div className="project-card__img-wrapper">
+                    <img src={data.imgSrc} className="project-card__img" />
+                </div>
             </div>
         )
     }

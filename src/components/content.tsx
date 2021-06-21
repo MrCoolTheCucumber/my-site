@@ -4,6 +4,7 @@ import { BlogListItem, BlogListItemProps } from './blog/blog_list_item';
 import BlogPost from './blog/blog';
 import Home from './home/home';
 import ProjectList from './projects/project_list';
+import Chip8Component from '../projects/chip8/chip8_component';
 
 import { MetaData } from '../blog/blog_metadata';
 
@@ -42,6 +43,34 @@ export default class Content extends React.Component {
         )
     }
 
+    renderDemoRoute(): JSX.Element {
+        return (
+            <Route 
+                path="/demo/:id"
+                children={({ match }) => {
+                    const id = match.params.id;
+
+                    switch (id) {
+                        case "chip8":
+                            return (
+                                <div style={{ 
+                                    height: "100%", 
+                                    display: "flex", 
+                                    alignItems: "center",
+                                    justifyContent: "center"
+                                }}>
+                                    <Chip8Component scale={5} />
+                                </div>
+                            );
+                        
+                        default:
+                            return <div>Blog not found :(</div>
+                    }
+                }} 
+            />
+        )
+    }
+
     render() {
         return (
             <div className="content">
@@ -54,6 +83,10 @@ export default class Content extends React.Component {
 
                     <Route path='/project'>
                         <ProjectList />
+                    </Route>
+
+                    <Route path='/demo'>
+                        {this.renderDemoRoute()}
                     </Route>
 
                     <Route exact path="/">
