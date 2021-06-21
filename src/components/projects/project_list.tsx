@@ -37,7 +37,7 @@ export default class ProjectList extends React.Component {
     renderDemoButton(data: ProjectCardData): JSX.Element | void {
         if (data.demoLink) {
             return (
-                <Link to={'/demo/' + data.demoLink} className="project-card__demo_button">
+                <Link to={'/demo/' + data.demoLink} className="project-card__demo_button demo">
                     <span>Demo</span>
                 </Link>
             )
