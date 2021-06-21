@@ -19,7 +19,8 @@ const projectData: ProjectCardData[] = [
     },
     {
         title: "Chip 8",
-        description: "First emulator project to get my feet wet",
+        description: `My first ever emulator project. Served as a gentle introduction some 
+            basic concepts, as well as a cool little project.`,
         githubLink: "https://github.com/RubenG123/my-site/tree/master/src/projects/chip8",
         imgSrc: "https://i.imgur.com/T0W73T5.png",
         demoLink: "chip8"
