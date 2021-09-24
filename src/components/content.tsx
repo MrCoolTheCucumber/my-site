@@ -6,14 +6,20 @@ import Home from './home/home';
 import ProjectList from './projects/project_list';
 import Chip8Component from '../projects/chip8/chip8_component';
 
-import { MetaData } from '../blog/blog_metadata';
+import { BlogMetaData, MetaData } from '../blog/blog_metadata';
 
 export default class Content extends React.Component {
 
     renderBlogList(): JSX.Element[] {
-        const blogItems: JSX.Element[] = MetaData.map((data: BlogListItemProps) => {
-            return <BlogListItem key={data.id} {...data}/>
-        });
+        const blogItems: JSX.Element[] = 
+            MetaData
+                .sort((data1: BlogMetaData, data2: BlogMetaData) => { 
+                    return data2.date.getTime() - data1.date.getTime() 
+                })
+                .map((data: BlogListItemProps) => {
+                    return <BlogListItem key={data.id} {...data}/>
+                });
+                
 
         return blogItems;
     }
