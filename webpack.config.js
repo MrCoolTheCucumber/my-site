@@ -58,7 +58,9 @@ module.exports = {
     // TODO: understand how this fix works
     // https://ui.dev/react-router-cannot-get-url-refresh/
     devServer: {
-        contentBase: '/dist',
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
         historyApiFallback: true
     },
 };
