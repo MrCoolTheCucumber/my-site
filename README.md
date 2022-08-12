@@ -3,5 +3,4 @@
 
 https://mrcoolthecucumber.com/
 
-Code for my personal website that is build using react and typescript
-
+Code for my personal website that is built using react and typescript
